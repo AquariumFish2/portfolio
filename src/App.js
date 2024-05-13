@@ -1,26 +1,20 @@
-import logo from "./logo.svg";
-import "./App.css";
-import {ChakraProvider} from "@chakra-ui/react"
+import { ChakraProvider } from "@chakra-ui/react";
+import Header from "./components/header";
+import Footer from "./components/footer";
+import ProfileSection from "./components/profile/ProfileSection";
+import ProjectSection from "./components/projects/ProjectsSection";
+import CertificatesSection from "./components/certificates/CertificatesSection";
 
 function App() {
+  document.body.classList.add("smooth-scrolling");
+
   return (
     <ChakraProvider>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Header></Header>
+      <ProfileSection></ProfileSection>
+      <ProjectSection></ProjectSection>
+      <CertificatesSection></CertificatesSection>
+      <Footer></Footer>
     </ChakraProvider>
   );
 }
