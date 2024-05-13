@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.57d29414.css",
+    "main.js": "/portfolio/static/js/main.639d521f.js",
+    "static/media/Responsive Web Design.jpg": "/portfolio/static/media/Responsive Web Design.7b30d235cac28553ff6d.jpg",
+    "static/media/JavaScript Algorithms and Data Structures.jpg": "/portfolio/static/media/JavaScript Algorithms and Data Structures.c7e68fb8bb88f31cef71.jpg",
+    "static/media/profile.jpg": "/portfolio/static/media/profile.11b9e684a03c1ca5d4e1.jpg",
+    "static/media/Advanced React.jpg": "/portfolio/static/media/Advanced React.e2ffd0a4014478aaa358.jpg",
+    "static/media/React Basics.jpg": "/portfolio/static/media/React Basics.5c7341dd426c5274c02f.jpg",
+    "static/media/Programming with JavaScript.jpg": "/portfolio/static/media/Programming with JavaScript.13c0e4dc8609439e54f4.jpg",
+    "index.html": "/portfolio/index.html",
+    "main.57d29414.css.map": "/portfolio/static/css/main.57d29414.css.map",
+    "main.639d521f.js.map": "/portfolio/static/js/main.639d521f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.57d29414.css",
+    "static/js/main.639d521f.js"
+  ]
+}
