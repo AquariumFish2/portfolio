@@ -9,7 +9,6 @@ function Dots(props) {
     }
   }
   useEffect(() => {}, []);
-  console.log(dots);
   return (
     <Grid
       position={"absolute"}

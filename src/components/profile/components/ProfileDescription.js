@@ -1,4 +1,5 @@
 import { Heading, VStack, Text } from "@chakra-ui/react";
+import Socials from "./socials";
 
 function ProfileDescription() {
   return (
@@ -13,6 +14,7 @@ function ProfileDescription() {
       <Text fontSize={"1.5em"} color={"rgb(126 185 251)"}>
         React Specialized
       </Text>
+      <Socials> </Socials>
     </VStack>
   );
 }

@@ -1,23 +1,21 @@
+import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+
 export const socials = [
   {
-    icon: "faEnvelope",
-    url: "mailto: hello@example.com",
+    icon: FaEnvelope,
+    url: "mailto: mohamed.mabrouk5560@gmail.com",
   },
   {
-    icon: "faGithub",
+    icon: FaGithub,
     url: "https://github.com",
   },
   {
-    icon: "faLinkedin",
+    icon: FaLinkedin,
     url: "https://www.linkedin.com",
   },
   {
-    icon: "faMedium",
-    url: "https://medium.com",
-  },
-  {
-    icon: "faStackOverflow",
-    url: "https://stackoverflow.com",
+    icon: FaTwitter,
+    url: "https://x.com",
   },
 ];
 

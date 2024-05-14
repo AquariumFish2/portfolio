@@ -2,6 +2,7 @@ import { HStack, VStack } from "@chakra-ui/react";
 import ProfilePicture from "./components/ProfilePicture";
 import ProfileDescription from "./components/ProfileDescription";
 import Dots from "../dots";
+import Rain from "../rain";
 
 function ProfileSection() {
   return (
@@ -15,7 +16,7 @@ function ProfileSection() {
       justifyContent={"center"}
       alignItems={"space-between"}
       position={"relative"}
-      overflowX={"hidden"}
+      overflow={"hidden"}
     >
       <HStack
         zIndex={1}
@@ -26,9 +27,10 @@ function ProfileSection() {
         <ProfilePicture></ProfilePicture>
         <ProfileDescription></ProfileDescription>
       </HStack>
+      <Rain></Rain>
       <Dots
         columns={8}
-        rows={8}
+        rows={5}
         top={{ base: "30%", md: "0px" }}
         left="1%"
       ></Dots>

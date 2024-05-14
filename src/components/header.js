@@ -28,15 +28,14 @@ function Header() {
       transitionProperty="transform"
       transitionDuration=".4s"
       transitionTimingFunction="ease-in-out"
-      backgroundColor="#FB667A"
+      backgroundColor="#00000090"
       zIndex={1000}
       ref={headerRef}
+      id="header"
       overflowX={"hidden"}
+      color={"white"}
     >
       <HStack
-        id="header"
-        backgroundColor={"black"}
-        color={"white"}
         width={"100vw"}
         justifyContent={"space-between"}
         paddingX={"30px"}
@@ -70,9 +69,12 @@ function HeaderItem(props) {
   return (
     <Link
       min-width={"30px"}
-      href={"#" + props.path}
+      href={"/#" + props.path}
       _hover={{ textDecoration: "none" }}
-      onClick={(e) => handleClick(props.path)}
+      onClick={(e) => {
+        e.preventDefault();
+        handleClick(props.path);
+      }}
     >
       <Center
         paddingX={"5px"}

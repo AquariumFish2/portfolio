@@ -3,15 +3,14 @@ import { certs } from "../../data/data";
 import { Center, HStack, Image, Box, IconButton } from "@chakra-ui/react";
 import { bouncy } from "ldrs";
 import { useSwipeable } from "react-swipeable";
-import { FaAngleRight,FaAngleLeft } from "react-icons/fa";
-import { CgArrowLeftR } from "react-icons/cg";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
 bouncy.register();
 
 // Default values shown
 
 function CertificatesSection() {
-  const [imgProp, setImgProp] = useState(1);
+  const [imgOpacity, setImageOpacity] = useState(1);
   const alt = (
     <Box height={"75vh"}>
       <Center>
@@ -21,18 +20,18 @@ function CertificatesSection() {
   );
 
   const nextCert = () => {
-    setImgProp(0);
+    setImageOpacity(0);
     setTimeout(() => {
       setImages([...images.slice(1), images[0]]);
-      setImgProp(1);
+      setImageOpacity(1);
     }, 500);
   };
 
   const prevCert = () => {
-    setImgProp(0);
+    setImageOpacity(0);
     setTimeout(() => {
       setImages([images[images.length - 1], ...images.slice(0, -1)]);
-      setImgProp(1);
+      setImageOpacity(1);
     }, 500);
   };
 
@@ -64,8 +63,8 @@ function CertificatesSection() {
         <Center
           position={"relative"}
           marginTop={"100px"}
-          height={{ base: "60vh", md: "90vh" }}
-          opacity={imgProp}
+          height={{ base: "60vh", md: "95vh" }}
+          opacity={imgOpacity}
           transition={"0.5s"}
         >
           {images[0]}
@@ -100,6 +99,9 @@ function CertButton(props) {
       zIndex={2}
       margin={0}
       icon={props.icon}
+      color={"white"}
+      backgroundColor={"black"}
+      _hover={{backgroundColor:"#00000090"}}
     ></IconButton>
   );
 }
