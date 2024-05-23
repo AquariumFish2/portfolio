@@ -4,6 +4,7 @@ import { Center, HStack, Image, Box, IconButton } from "@chakra-ui/react";
 import { bouncy } from "ldrs";
 import { useSwipeable } from "react-swipeable";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
+import Title from "../Title";
 
 bouncy.register();
 
@@ -57,25 +58,17 @@ function CertificatesSection() {
       prevCert();
     },
   });
+
   return (
     <Box position={"relative"} overflowX={"hidden"}>
-      <div {...swipeHandlers}>
-        <Center
-          position={"relative"}
-          marginTop={"100px"}
-          height={{ base: "60vh", md: "95vh" }}
-          opacity={imgOpacity}
-          transition={"0.5s"}
-        >
-          {images[0]}
-        </Center>
-      </div>
+      <Title title="Certificates"></Title>
       <HStack
-        position={"absolute"}
+        position={{ base: "relative", md: "absolute" }}
         top={{ base: "15%", md: "55%", lg: "55%" }}
         justifyContent={{ base: "flex-end", md: "space-between" }}
         width={"calc(100vw - 20px)"}
         paddingX={"30px"}
+        paddingTop={{base:"30px",md:"0"}}
       >
         <CertButton
           type={"prev"}
@@ -88,6 +81,16 @@ function CertificatesSection() {
           icon={<FaAngleRight />}
         ></CertButton>
       </HStack>
+      <div {...swipeHandlers}>
+        <Center
+          position={"relative"}
+          opacity={imgOpacity}
+          marginY={"30px"}
+          transition={"0.5s"}
+        >
+          {images[0]}
+        </Center>
+      </div>
     </Box>
   );
 }
@@ -101,7 +104,7 @@ function CertButton(props) {
       icon={props.icon}
       color={"white"}
       backgroundColor={"black"}
-      _hover={{backgroundColor:"#00000090"}}
+      _hover={{ backgroundColor: "#00000090" }}
     ></IconButton>
   );
 }

@@ -1,26 +1,63 @@
-import { GridItem, Heading, Image, Text, VStack } from "@chakra-ui/react";
-import test from "../../../assets/profile.jpg";
+import {
+  Box,
+  GridItem,
+  HStack,
+  Heading,
+  Image,
+  Link,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+import Project from "../../../data/project-class";
+import Chip from "./chip";
+import { BiWindowAlt } from "react-icons/bi";
 
-function ProjectCard() {
+function ProjectCard(props) {
+  const project = new Project(props.project);
+
   return (
     <GridItem
-      width={{ md: "40vw", base: "80vw" }}
+      width={{ base: "80vw", lg: "40vw" }}
       border={"1px solid #e9e9e9"}
       borderRadius={"3xl"}
       paddingBottom={10}
     >
-      <VStack>
-        <Image
-          src={test}
-          maxHeight={"70vh"}
-          width={"100%"}
-          objectFit={"cover"}
-          objectPosition={"0% 0%"}
-          borderTopRightRadius={"3xl"}
-          borderTopLeftRadius={"3xl"}
-        ></Image>
-        <Heading>Test Project</Heading>
-        <Text>Test Details </Text>
+      <VStack justifyContent={"space-between"} height={"100%"}>
+        <VStack>
+          <Box position={"relative"}>
+            <Image
+              src={project.image}
+              height={"70vh"}
+              width={"100%"}
+              objectFit={"cover"}
+              objectPosition={"0% 0%"}
+              borderTopRightRadius={"3xl"}
+              borderTopLeftRadius={"3xl"}
+            ></Image>
+            <HStack
+              width={"100%"}
+              justifyContent={"center"}
+              position={"absolute"}
+              bottom={"30px"}
+            >
+              {project.technologies.map((tech) => (
+                <Chip tech={tech}></Chip>
+              ))}
+            </HStack>
+          </Box>
+          <VStack padding={"10px"}>
+            <Heading>{project.title}</Heading>
+            <Text color={"gray"}>{project.description} </Text>
+          </VStack>
+        </VStack>
+        <HStack alignSelf={"flex-end"} paddingRight={"16px"}>
+          <Link href={project.url} target="_blank">
+            <HStack>
+              <Text>Visit Site</Text>
+              <BiWindowAlt></BiWindowAlt>
+            </HStack>
+          </Link>
+        </HStack>
       </VStack>
     </GridItem>
   );

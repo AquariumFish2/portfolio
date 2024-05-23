@@ -1,21 +1,23 @@
-import { Grid, Heading, VStack } from "@chakra-ui/react";
+import { Grid,  VStack } from "@chakra-ui/react";
+import { projects } from "../../data/data";
 import ProjectCard from "./components/ProjcetCard";
+import Title from "../Title";
 
 function ProjectSection() {
+  console.log(projects);
   return (
-    <VStack id="projects" overflowX={"hidden"} padding={30}>
-      <Heading padding={30} alignSelf={"flex-start"}>
-        Most Recent:
-      </Heading>
-      <Grid
-        templateColumns={{ base: "1fr", md: "repeat(2,1fr)" }}
-        templateRows={{ base: "repeat(4fr)", md: "repeat(2,1fr)" }}
-        gap={30}
-      >
-        <ProjectCard></ProjectCard>
-        <ProjectCard></ProjectCard>
-        <ProjectCard></ProjectCard>
-        <ProjectCard></ProjectCard>
+    <VStack
+      id="projects"
+      overflowX={"hidden"}
+      padding={30}
+      gap="30px"
+      marginBottom={"60px"}
+    >
+      <Title title={"Projects"}></Title>
+      <Grid templateColumns={{ base: "1fr",lg:"1fr 1fr" }} gap={"10px"}>
+        {projects.map((pro) => (
+          <ProjectCard project={pro}></ProjectCard>
+        ))}
       </Grid>
     </VStack>
   );
