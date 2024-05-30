@@ -1,10 +1,9 @@
-import { Grid,  VStack } from "@chakra-ui/react";
+import { Grid, VStack } from "@chakra-ui/react";
 import { projects } from "../../data/data";
 import ProjectCard from "./components/ProjcetCard";
 import Title from "../Title";
 
 function ProjectSection() {
-  console.log(projects);
   return (
     <VStack
       id="projects"
@@ -14,7 +13,7 @@ function ProjectSection() {
       marginBottom={"60px"}
     >
       <Title title={"Projects"}></Title>
-      <Grid templateColumns={{ base: "1fr",lg:"1fr 1fr" }} gap={"10px"}>
+      <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={"10px"}>
         {projects.map((pro) => (
           <ProjectCard project={pro}></ProjectCard>
         ))}

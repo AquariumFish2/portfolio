@@ -25,10 +25,10 @@ function RainDrop(props) {
     <Circle
       height={"4px"}
       width={"2px"}
-      backgroundColor={"rgba(120,200,255,1)"}
+      backgroundColor={"rgba(120,200,255,0.5)"}
       position={"absolute"}
       animation={`rain 1s ${props.delayRand}s linear infinite`}
-      transform={"rotate(30deg)"}
+      transform={"rotate(45deg)"}
       left={props.positionXaxis * 100 + "vw"}
       top={0}
     ></Circle>
