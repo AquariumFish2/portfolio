@@ -43,8 +43,13 @@ function CertificatesSection() {
           src={url}
           alt={alt}
           key={url}
-          width={{ base: "85vw", lg: "50vw" }}
           objectFit={"cover"}
+          loading="lazy"
+          _placeholder={{
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "grey",
+          }}
         ></Image>
       );
     })
@@ -60,7 +65,7 @@ function CertificatesSection() {
   });
 
   return (
-    <Box position={"relative"} overflowX={"hidden"}>
+    <Box position={"relative"} overflowX={"hidden"} id="certs">
       <Title title="Certificates"></Title>
       <HStack
         position={{ base: "relative", md: "absolute" }}
@@ -68,7 +73,7 @@ function CertificatesSection() {
         justifyContent={{ base: "flex-end", md: "space-between" }}
         width={"calc(100vw - 20px)"}
         paddingX={"30px"}
-        paddingTop={{base:"30px",md:"0"}}
+        paddingTop={{ base: "30px", md: "0" }}
       >
         <CertButton
           type={"prev"}
@@ -87,6 +92,7 @@ function CertificatesSection() {
           opacity={imgOpacity}
           marginY={"30px"}
           transition={"0.5s"}
+          minHeight={{ base: "50vh", md: "100vh" }}
         >
           {images[0]}
         </Center>

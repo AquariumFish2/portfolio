@@ -1,6 +1,7 @@
-import { HStack, Box, Heading, Link, Center } from "@chakra-ui/react";
+import { HStack, Box, Heading, Center } from "@chakra-ui/react";
 import { useState, useRef, useEffect } from "react";
 import debounce from "lodash.debounce"; // Import debounce function
+import { Link as ScrollLink } from "react-scroll";
 
 function Header() {
   const [prevScrollPosition, setPrevScrollPosition] = useState(0);
@@ -55,26 +56,12 @@ function Header() {
 }
 
 function HeaderItem(props) {
-  const handleClick = (anchor) => {
-    console.log("clicked");
-    const element = document.getElementById(anchor);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
-
   return (
-    <Link
+    <ScrollLink
       min-width={"30px"}
-      href={"/#" + props.path}
-      _hover={{ textDecoration: "none" }}
-      onClick={(e) => {
-        e.preventDefault();
-        handleClick(props.path);
-      }}
+      to={props.path}
+      smooth={true}
+      style={{cursor:"pointer"}}
     >
       <Center
         paddingX={"5px"}
@@ -84,7 +71,7 @@ function HeaderItem(props) {
       >
         {props.name}
       </Center>
-    </Link>
+    </ScrollLink>
   );
 }
 
