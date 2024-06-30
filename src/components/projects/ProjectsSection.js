@@ -15,7 +15,7 @@ function ProjectSection() {
       <Title title={"Projects"}></Title>
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={"10px"}>
         {projects.map((pro) => (
-          <ProjectCard project={pro}></ProjectCard>
+          <ProjectCard project={pro} key={pro.title}></ProjectCard>
         ))}
       </Grid>
     </VStack>

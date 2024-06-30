@@ -3,6 +3,7 @@ import ProfilePicture from "./components/ProfilePicture";
 import ProfileDescription from "./components/ProfileDescription";
 import Dots from "../dots";
 import Rain from "../rain";
+import Cloud from "../cloud";
 
 function ProfileSection() {
   return (
@@ -34,6 +35,8 @@ function ProfileSection() {
         top={{ base: "30%", md: "0px" }}
         left="1%"
       ></Dots>
+      <Cloud top="20px" movingRight={false}></Cloud>
+      <Cloud top="50px" movingRight={true}></Cloud>
     </VStack>
   );
 }

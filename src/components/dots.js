@@ -18,19 +18,28 @@ function Dots(props) {
         base: `repeat(${props.columns},${100 / props.columns}vw)`,
       }}
       templateRows={{ base: `repeat(${props.rows},10vw)` }}
-      justifyContent={"flex-start"}
-      alignContent={"center"}
       zIndex={0}
       maxHeight={"calc(100vh)"}
       overflowY={"hidden"}
     >
       {dots.map((dot) => (
-        <GridItem key={dot}>
+        <GridItem
+          key={dot}
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          width={30}
+          height={30}
+        >
           <Circle
             minHeight={1}
-            maxWidth={1}
+            minW={1}
             backgroundColor={"#4d94bf40"}
             boxShadow={"0px 0px 4px 2px #4d94bf90"}
+            _hover={{
+              backgroundColor: "#4d94bf",
+              boxShadow: "0px 0px 4px 2px #4d94bf",
+            }}
           ></Circle>
         </GridItem>
       ))}

@@ -2,7 +2,7 @@ import { Circle, Box } from "@chakra-ui/react";
 import "./animations.css";
 const rainDropsPositions = [];
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 60; i++) {
   rainDropsPositions.push({ pos: Math.random(), delay: Math.random() });
 }
 
@@ -12,7 +12,13 @@ function Rain() {
   return (
     <Box position={"absolute"} height={"100%"}>
       {rainDropsPositions.map((p) => {
-        return <RainDrop positionXaxis={p.pos} delayRand={p.delay}></RainDrop>;
+        return (
+          <RainDrop
+            positionXaxis={p.pos}
+            delayRand={p.delay}
+            key={p.delay}
+          ></RainDrop>
+        );
       })}
     </Box>
   );

@@ -41,7 +41,7 @@ function ProjectCard(props) {
               bottom={"30px"}
             >
               {project.technologies.map((tech) => (
-                <Chip tech={tech}></Chip>
+                <Chip tech={tech} key={tech}></Chip>
               ))}
             </HStack>
           </Box>

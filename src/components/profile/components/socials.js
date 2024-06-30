@@ -7,10 +7,9 @@ function Socials() {
       paddingTop={5}
       justifyContent={"center"}
       alignItems={"center"}
-
     >
       {socials.map((social) => (
-        <a href={social.url} rel="noreferrer" target="_blank">
+        <a href={social.url} rel="noreferrer" target="_blank" key={social.url}>
           <IconButton
             icon={social.icon()}
             backgroundColor={"black"}
