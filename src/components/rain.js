@@ -7,7 +7,7 @@ function Rain() {
 
   useEffect(() => {
     let rain = [];
-    let time = Math.random() * 1000;
+    let time = Math.random() * 20000;
     console.log(time);
     for (let i = 0; i < 10; i++) {
       rain.push({ pos: Math.random(), delay: Math.random() });
