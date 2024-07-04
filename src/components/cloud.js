@@ -23,7 +23,7 @@ function Cloud(props) {
       left={props.movingRight ? "0px" : "calc(100% - 100px)"}
       animation={`${
         props.movingRight ? "cloudMovingRight" : "cloudMovingLeft"
-      } 30s linear infinite alternate-reverse`}
+      } 30s ease infinite alternate-reverse`}
     >
       <CloudPart bgC={bgC} top={"30px"} left={"25px"} timing={"2s"}></CloudPart>
       <CloudPart bgC={bgC} top={"50px"} timing={"3s"}></CloudPart>

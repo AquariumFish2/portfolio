@@ -2,8 +2,7 @@ import { HStack, VStack } from "@chakra-ui/react";
 import ProfilePicture from "./components/ProfilePicture";
 import ProfileDescription from "./components/ProfileDescription";
 import Dots from "../dots";
-import Rain from "../rain";
-import Cloud from "../cloud";
+import RainStorm from "./components/RainStorm";
 
 function ProfileSection() {
   return (
@@ -28,15 +27,13 @@ function ProfileSection() {
         <ProfilePicture></ProfilePicture>
         <ProfileDescription></ProfileDescription>
       </HStack>
-      <Rain></Rain>
+      <RainStorm />
       <Dots
         columns={8}
         rows={5}
         top={{ base: "30%", md: "0px" }}
         left="1%"
       ></Dots>
-      <Cloud top="20px" movingRight={false}></Cloud>
-      <Cloud top="50px" movingRight={true}></Cloud>
     </VStack>
   );
 }

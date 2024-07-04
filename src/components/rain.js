@@ -1,14 +1,22 @@
 import { Circle, Box } from "@chakra-ui/react";
 import "./animations.css";
-const rainDropsPositions = [];
-
-for (let i = 0; i < 60; i++) {
-  rainDropsPositions.push({ pos: Math.random(), delay: Math.random() });
-}
-
-console.log(rainDropsPositions);
+import { useState, useEffect } from "react";
 
 function Rain() {
+  const [rainDropsPositions, setRainDropsPositions] = useState([]);
+
+  useEffect(() => {
+    let rain = [];
+    let time = Math.random() * 1000;
+    console.log(time);
+    for (let i = 0; i < 10; i++) {
+      rain.push({ pos: Math.random(), delay: Math.random() });
+    }
+    setTimeout(() => {
+      setRainDropsPositions(rain);
+    }, time);
+  }, []);
+
   return (
     <Box position={"absolute"} height={"100%"}>
       {rainDropsPositions.map((p) => {
@@ -35,7 +43,7 @@ function RainDrop(props) {
       position={"absolute"}
       animation={`rain 1s ${props.delayRand}s linear infinite`}
       transform={"rotate(45deg)"}
-      left={props.positionXaxis * 100 + "vw"}
+      left={props.positionXaxis * 120 + "vw"}
       top={0}
     ></Circle>
   );
